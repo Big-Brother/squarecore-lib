@@ -5,10 +5,10 @@ var expect = require('chai').expect;
 var _ = require('lodash');
 var sinon = require('sinon');
 
-var bitcore = require('../..');
-var GovObject = bitcore.GovObject;
-var Proposal = bitcore.GovObject.Proposal;
-var errors = bitcore.errors;
+var squarecore = require('../..');
+var GovObject = squarecore.GovObject;
+var Proposal = squarecore.GovObject.Proposal;
+var errors = squarecore.errors;
 
 
 var BufferReader = require('../../lib/encoding/bufferreader');

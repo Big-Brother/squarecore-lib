@@ -1,69 +1,69 @@
 'use strict';
 
-var bitcore = module.exports;
+var squarecore = module.exports;
 
 // module information
-bitcore.version = 'v' + require('./package.json').version;
-bitcore.versionGuard = function(version) {
+squarecore.version = 'v' + require('./package.json').version;
+squarecore.versionGuard = function(version) {
   if (version !== undefined) {
     var message = 'More than one instance of squarecore-lib found. ' + 
-      'Please make sure that you are not mixing instances of classes of the different versions of bitcore.';
+      'Please make sure that you are not mixing instances of classes of the different versions of squarecore.';
     console.warn(message);
   }
 };
-bitcore.versionGuard(global._bitcore);
-global._bitcore = bitcore.version;
+squarecore.versionGuard(global._squarecore);
+global._squarecore = squarecore.version;
 
 // crypto
-bitcore.crypto = {};
-bitcore.crypto.BN = require('./lib/crypto/bn');
-bitcore.crypto.ECDSA = require('./lib/crypto/ecdsa');
-bitcore.crypto.Hash = require('./lib/crypto/hash');
-bitcore.crypto.Random = require('./lib/crypto/random');
-bitcore.crypto.Point = require('./lib/crypto/point');
-bitcore.crypto.Signature = require('./lib/crypto/signature');
+squarecore.crypto = {};
+squarecore.crypto.BN = require('./lib/crypto/bn');
+squarecore.crypto.ECDSA = require('./lib/crypto/ecdsa');
+squarecore.crypto.Hash = require('./lib/crypto/hash');
+squarecore.crypto.Random = require('./lib/crypto/random');
+squarecore.crypto.Point = require('./lib/crypto/point');
+squarecore.crypto.Signature = require('./lib/crypto/signature');
 
 // encoding
-bitcore.encoding = {};
-bitcore.encoding.Base58 = require('./lib/encoding/base58');
-bitcore.encoding.Base58Check = require('./lib/encoding/base58check');
-bitcore.encoding.BufferReader = require('./lib/encoding/bufferreader');
-bitcore.encoding.BufferWriter = require('./lib/encoding/bufferwriter');
-bitcore.encoding.Varint = require('./lib/encoding/varint');
+squarecore.encoding = {};
+squarecore.encoding.Base58 = require('./lib/encoding/base58');
+squarecore.encoding.Base58Check = require('./lib/encoding/base58check');
+squarecore.encoding.BufferReader = require('./lib/encoding/bufferreader');
+squarecore.encoding.BufferWriter = require('./lib/encoding/bufferwriter');
+squarecore.encoding.Varint = require('./lib/encoding/varint');
 
 // utilities
-bitcore.util = {};
-bitcore.util.buffer = require('./lib/util/buffer');
-bitcore.util.js = require('./lib/util/js');
-bitcore.util.preconditions = require('./lib/util/preconditions');
+squarecore.util = {};
+squarecore.util.buffer = require('./lib/util/buffer');
+squarecore.util.js = require('./lib/util/js');
+squarecore.util.preconditions = require('./lib/util/preconditions');
 
 // errors thrown by the library
-bitcore.errors = require('./lib/errors');
+squarecore.errors = require('./lib/errors');
 
 // main bitcoin library
-bitcore.Address = require('./lib/address');
-bitcore.Block = require('./lib/block');
-bitcore.MerkleBlock = require('./lib/block/merkleblock');
-bitcore.BlockHeader = require('./lib/block/blockheader');
-bitcore.HDPrivateKey = require('./lib/hdprivatekey.js');
-bitcore.HDPublicKey = require('./lib/hdpublickey.js');
-bitcore.Networks = require('./lib/networks');
-bitcore.Opcode = require('./lib/opcode');
-bitcore.PrivateKey = require('./lib/privatekey');
-bitcore.PublicKey = require('./lib/publickey');
-bitcore.Script = require('./lib/script');
-bitcore.Transaction = require('./lib/transaction');
-bitcore.GovObject = require('./lib/govobject');
-bitcore.URI = require('./lib/uri');
-bitcore.Unit = require('./lib/unit');
+squarecore.Address = require('./lib/address');
+squarecore.Block = require('./lib/block');
+squarecore.MerkleBlock = require('./lib/block/merkleblock');
+squarecore.BlockHeader = require('./lib/block/blockheader');
+squarecore.HDPrivateKey = require('./lib/hdprivatekey.js');
+squarecore.HDPublicKey = require('./lib/hdpublickey.js');
+squarecore.Networks = require('./lib/networks');
+squarecore.Opcode = require('./lib/opcode');
+squarecore.PrivateKey = require('./lib/privatekey');
+squarecore.PublicKey = require('./lib/publickey');
+squarecore.Script = require('./lib/script');
+squarecore.Transaction = require('./lib/transaction');
+squarecore.GovObject = require('./lib/govobject');
+squarecore.URI = require('./lib/uri');
+squarecore.Unit = require('./lib/unit');
 
 // dependencies, subject to change
-bitcore.deps = {};
-bitcore.deps.bnjs = require('bn.js');
-bitcore.deps.bs58 = require('bs58');
-bitcore.deps.Buffer = Buffer;
-bitcore.deps.elliptic = require('elliptic');
-bitcore.deps._ = require('lodash');
+squarecore.deps = {};
+squarecore.deps.bnjs = require('bn.js');
+squarecore.deps.bs58 = require('bs58');
+squarecore.deps.Buffer = Buffer;
+squarecore.deps.elliptic = require('elliptic');
+squarecore.deps._ = require('lodash');
 
 // Internal usage, exposed for testing/advanced tweaking
-bitcore.Transaction.sighash = require('./lib/transaction/sighash');
+squarecore.Transaction.sighash = require('./lib/transaction/sighash');

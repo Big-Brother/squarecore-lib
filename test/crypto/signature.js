@@ -2,11 +2,11 @@
 
 var _ = require('lodash');
 var should = require('chai').should();
-var bitcore = require('../..');
-var BN = bitcore.crypto.BN;
-var Signature = bitcore.crypto.Signature;
-var JSUtil = bitcore.util.js;
-var Interpreter = bitcore.Script.Interpreter;
+var squarecore = require('../..');
+var BN = squarecore.crypto.BN;
+var Signature = squarecore.crypto.Signature;
+var JSUtil = squarecore.util.js;
+var Interpreter = squarecore.Script.Interpreter;
 
 var sig_canonical = require('../data/squared/sig_canonical');
 var sig_noncanonical = require('../data/squared/sig_noncanonical');

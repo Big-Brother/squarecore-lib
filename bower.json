@@ -1,8 +1,8 @@
 {
-  "name": "bitcore-lib",
-  "main": "./bitcore-lib.min.js",
+  "name": "@big/brother/squarecore-lib",
+  "main": "./squarecore-lib.min.js",
   "version": "0.14.3",
-  "homepage": "http://bitcore.io",
+  "homepage": "http://squarecore.io",
   "authors": [
     "BitPay, Inc."
   ],
@@ -12,7 +12,7 @@
   ],
   "keywords": [
     "bitcoin",
-    "bitcore",
+    "squarecore",
     "btc",
     "satoshi"
   ],

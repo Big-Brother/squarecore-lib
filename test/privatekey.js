@@ -4,12 +4,12 @@ var chai = require('chai');
 var should = chai.should();
 var expect = chai.expect;
 
-var bitcore = require('..');
-var BN = bitcore.crypto.BN;
-var Point = bitcore.crypto.Point;
-var PrivateKey = bitcore.PrivateKey;
-var Networks = bitcore.Networks;
-var Base58Check = bitcore.encoding.Base58Check;
+var squarecore = require('..');
+var BN = squarecore.crypto.BN;
+var Point = squarecore.crypto.Point;
+var PrivateKey = squarecore.PrivateKey;
+var Networks = squarecore.Networks;
+var Base58Check = squarecore.encoding.Base58Check;
 
 var validbase58 = require('./data/squared/base58_keys_valid.json');
 var invalidbase58 = require('./data/squared/base58_keys_invalid.json');

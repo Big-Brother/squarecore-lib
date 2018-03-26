@@ -1,14 +1,14 @@
 'use strict';
 
 var should = require('chai').should();
-var bitcore = require('../..');
-var Interpreter = bitcore.Script.Interpreter;
-var Transaction = bitcore.Transaction;
-var PrivateKey = bitcore.PrivateKey;
-var Script = bitcore.Script;
-var BN = bitcore.crypto.BN;
-var BufferWriter = bitcore.encoding.BufferWriter;
-var Opcode = bitcore.Opcode;
+var squarecore = require('../..');
+var Interpreter = squarecore.Script.Interpreter;
+var Transaction = squarecore.Transaction;
+var PrivateKey = squarecore.PrivateKey;
+var Script = squarecore.Script;
+var BN = squarecore.crypto.BN;
+var BufferWriter = squarecore.encoding.BufferWriter;
+var Opcode = squarecore.Opcode;
 var _ = require('lodash');
 
 var script_valid = require('../data/squared/script_valid');

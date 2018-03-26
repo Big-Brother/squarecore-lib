@@ -1,7 +1,7 @@
 'use strict';
 
-var bitcore = require('../..');
-var Random = bitcore.crypto.Random;
+var squarecore = require('../..');
+var Random = squarecore.crypto.Random;
 var should = require('chai').should();
 var expect = require('chai').expect;
 

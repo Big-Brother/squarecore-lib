@@ -1,5 +1,5 @@
 
 
-var bitcoreTasks = require('bitcore-build-square');
+var squarecoreTasks = require('squarecore-build');
 
-bitcoreTasks('lib');
+squarecoreTasks('lib');

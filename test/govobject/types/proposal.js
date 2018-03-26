@@ -7,12 +7,12 @@ var expect = require('chai').expect;
 var _ = require('lodash');
 var sinon = require('sinon');
 
-var bitcore = require('../../..');
-var BufferReader = bitcore.encoding.BufferReader;
-var BufferWriter = bitcore.encoding.BufferWriter;
+var squarecore = require('../../..');
+var BufferReader = squarecore.encoding.BufferReader;
+var BufferWriter = squarecore.encoding.BufferWriter;
 
-var Proposal = bitcore.GovObject.Proposal;
-var errors = bitcore.errors;
+var Proposal = squarecore.GovObject.Proposal;
+var errors = squarecore.errors;
 
 // TODO: create Proposal from object
 
@@ -253,7 +253,7 @@ describe('Proposal', function() {
   });
 
   it('should create a new proposal from a hex string', function() {
-    var Proposal = bitcore.GovObject.Proposal;
+    var Proposal = squarecore.GovObject.Proposal;
     var proposal = new Proposal(expectedHex);
 
     expect(proposal instanceof Proposal);

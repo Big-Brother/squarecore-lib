@@ -1,15 +1,15 @@
 'use strict';
 
-var bitcore = require('../..');
+var squarecore = require('../..');
 var BN = require('../../lib/crypto/bn');
-var BufferReader = bitcore.encoding.BufferReader;
-var BufferWriter = bitcore.encoding.BufferWriter;
-var BlockHeader = bitcore.BlockHeader;
-var Block = bitcore.Block;
+var BufferReader = squarecore.encoding.BufferReader;
+var BufferWriter = squarecore.encoding.BufferWriter;
+var BlockHeader = squarecore.BlockHeader;
+var Block = squarecore.Block;
 var chai = require('chai');
 var fs = require('fs');
 var should = chai.should();
-var Transaction = bitcore.Transaction;
+var Transaction = squarecore.Transaction;
 
 // https://test-insight.bitpay.com/block/000000000b99b16390660d79fcc138d2ad0c89a0d044c4201a02bdf1f61ffa11
 var dataRawBlockBuffer = fs.readFileSync('test/data/blk19976-testnet.dat');

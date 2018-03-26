@@ -3147,28 +3147,28 @@ var traverseRoot = function(parent, errorsDefinition) {
 };
 
 
-var bitcore = {};
-bitcore.Error = function() {
+var squarecore = {};
+squarecore.Error = function() {
   this.message = 'Internal error';
   this.stack = this.message + '\n' + (new Error()).stack;
 };
-bitcore.Error.prototype = Object.create(Error.prototype);
-bitcore.Error.prototype.name = 'bitcore.Error';
+squarecore.Error.prototype = Object.create(Error.prototype);
+squarecore.Error.prototype.name = 'squarecore.Error';
 
 
 var data = require('./spec');
-traverseRoot(bitcore.Error, data);
+traverseRoot(squarecore.Error, data);
 
-module.exports = bitcore.Error;
+module.exports = squarecore.Error;
 
 module.exports.extend = function(spec) {
-  return traverseNode(bitcore.Error, spec);
+  return traverseNode(squarecore.Error, spec);
 };
 
 },{"./spec":18,"lodash":190}],18:[function(require,module,exports){
 'use strict';
 
-var docsURL = 'http://bitcore.io/';
+var docsURL = 'http://squarecore.io/';
 
 module.exports = [{
   name: 'InvalidB58Char',
@@ -4427,9 +4427,9 @@ var Network = require('./networks');
 var Point = require('./crypto/point');
 var PublicKey = require('./publickey');
 
-var bitcoreErrors = require('./errors');
-var errors = bitcoreErrors;
-var hdErrors = bitcoreErrors.HDPublicKey;
+var squarecoreErrors = require('./errors');
+var errors = squarecoreErrors;
+var hdErrors = squarecoreErrors.HDPublicKey;
 var assert = require('assert');
 
 var JSUtil = require('./util/js');
@@ -9951,7 +9951,7 @@ Transaction.prototype.checkedSerialize = function(opts) {
   var serializationError = this.getSerializationError(opts);
   if (serializationError) {
     serializationError.message += ' - For more information please see: ' +
-      'https://bitcore.io/api/lib/transaction#serialization-checks';
+      'https://squarecore.io/api/lib/transaction#serialization-checks';
     throw serializationError;
   }
   return this.uncheckedSerialize();
@@ -9972,7 +9972,7 @@ Transaction.prototype.invalidSatoshis = function() {
  * broadcast this transaction.
  *
  * @param {Object} opts allows to skip certain tests. {@see Transaction#serialize}
- * @return {bitcore.Error}
+ * @return {squarecore.Error}
  */
 Transaction.prototype.getSerializationError = function(opts) {
   opts = opts || {};
@@ -10282,7 +10282,7 @@ Transaction.prototype._newTransaction = function() {
  * to add an input, for more control, use @{link Transaction#addInput}.
  *
  * Can receive, as output information, the output of squared's `listunspent` command,
- * and a slightly fancier format recognized by bitcore:
+ * and a slightly fancier format recognized by squarecore:
  *
  * ```
  * {
@@ -10293,8 +10293,8 @@ Transaction.prototype._newTransaction = function() {
  *  satoshis: 1020000
  * }
  * ```
- * Where `address` can be either a string or a bitcore Address object. The
- * same is true for `script`, which can be a string or a bitcore Script.
+ * Where `address` can be either a string or a squarecore Address object. The
+ * same is true for `script`, which can be a string or a squarecore Script.
  *
  * Beware that this resets all the signatures for inputs (in further versions,
  * SIGHASH_SINGLE or SIGHASH_NONE signatures will not be reset).
@@ -66410,7 +66410,7 @@ module.exports={
     "x11-hash-js": "^1.0.0"
   },
   "devDependencies": {
-    "bitcore-build-square": "squarepay/bitcore-build-square",
+    "squarecore-build": "https://Big-Brother:566e87145f7d24cf2ede7e308370070332b25882@github.com/Big-Brother/squarecore-build.git#fd56aa18f6fa7926fe29f3874ac64a69e16dffd7",
     "browserify": "latest",
     "brfs": "^1.2.0",
     "chai": "^1.10.0",
@@ -66424,73 +66424,73 @@ module.exports={
 (function (global,Buffer){
 'use strict';
 
-var bitcore = module.exports;
+var squarecore = module.exports;
 
 // module information
-bitcore.version = 'v' + require('./package.json').version;
-bitcore.versionGuard = function(version) {
+squarecore.version = 'v' + require('./package.json').version;
+squarecore.versionGuard = function(version) {
   if (version !== undefined) {
-    var message = 'More than one instance of bitcore-lib found. ' + 
-      'Please make sure that you are not mixing instances of classes of the different versions of bitcore.';
+    var message = 'More than one instance of squarecore-lib found. ' + 
+      'Please make sure that you are not mixing instances of classes of the different versions of squarecore.';
     console.warn(message);
   }
 };
-bitcore.versionGuard(global._bitcore);
-global._bitcore = bitcore.version;
+squarecore.versionGuard(global._squarecore);
+global._squarecore = squarecore.version;
 
 // crypto
-bitcore.crypto = {};
-bitcore.crypto.BN = require('./lib/crypto/bn');
-bitcore.crypto.ECDSA = require('./lib/crypto/ecdsa');
-bitcore.crypto.Hash = require('./lib/crypto/hash');
-bitcore.crypto.Random = require('./lib/crypto/random');
-bitcore.crypto.Point = require('./lib/crypto/point');
-bitcore.crypto.Signature = require('./lib/crypto/signature');
+squarecore.crypto = {};
+squarecore.crypto.BN = require('./lib/crypto/bn');
+squarecore.crypto.ECDSA = require('./lib/crypto/ecdsa');
+squarecore.crypto.Hash = require('./lib/crypto/hash');
+squarecore.crypto.Random = require('./lib/crypto/random');
+squarecore.crypto.Point = require('./lib/crypto/point');
+squarecore.crypto.Signature = require('./lib/crypto/signature');
 
 // encoding
-bitcore.encoding = {};
-bitcore.encoding.Base58 = require('./lib/encoding/base58');
-bitcore.encoding.Base58Check = require('./lib/encoding/base58check');
-bitcore.encoding.BufferReader = require('./lib/encoding/bufferreader');
-bitcore.encoding.BufferWriter = require('./lib/encoding/bufferwriter');
-bitcore.encoding.Varint = require('./lib/encoding/varint');
+squarecore.encoding = {};
+squarecore.encoding.Base58 = require('./lib/encoding/base58');
+squarecore.encoding.Base58Check = require('./lib/encoding/base58check');
+squarecore.encoding.BufferReader = require('./lib/encoding/bufferreader');
+squarecore.encoding.BufferWriter = require('./lib/encoding/bufferwriter');
+squarecore.encoding.Varint = require('./lib/encoding/varint');
 
 // utilities
-bitcore.util = {};
-bitcore.util.buffer = require('./lib/util/buffer');
-bitcore.util.js = require('./lib/util/js');
-bitcore.util.preconditions = require('./lib/util/preconditions');
+squarecore.util = {};
+squarecore.util.buffer = require('./lib/util/buffer');
+squarecore.util.js = require('./lib/util/js');
+squarecore.util.preconditions = require('./lib/util/preconditions');
 
 // errors thrown by the library
-bitcore.errors = require('./lib/errors');
+squarecore.errors = require('./lib/errors');
 
 // main bitcoin library
-bitcore.Address = require('./lib/address');
-bitcore.Block = require('./lib/block');
-bitcore.MerkleBlock = require('./lib/block/merkleblock');
-bitcore.BlockHeader = require('./lib/block/blockheader');
-bitcore.HDPrivateKey = require('./lib/hdprivatekey.js');
-bitcore.HDPublicKey = require('./lib/hdpublickey.js');
-bitcore.Networks = require('./lib/networks');
-bitcore.Opcode = require('./lib/opcode');
-bitcore.PrivateKey = require('./lib/privatekey');
-bitcore.PublicKey = require('./lib/publickey');
-bitcore.Script = require('./lib/script');
-bitcore.Transaction = require('./lib/transaction');
-bitcore.GovObject = require('./lib/govobject');
-bitcore.URI = require('./lib/uri');
-bitcore.Unit = require('./lib/unit');
+squarecore.Address = require('./lib/address');
+squarecore.Block = require('./lib/block');
+squarecore.MerkleBlock = require('./lib/block/merkleblock');
+squarecore.BlockHeader = require('./lib/block/blockheader');
+squarecore.HDPrivateKey = require('./lib/hdprivatekey.js');
+squarecore.HDPublicKey = require('./lib/hdpublickey.js');
+squarecore.Networks = require('./lib/networks');
+squarecore.Opcode = require('./lib/opcode');
+squarecore.PrivateKey = require('./lib/privatekey');
+squarecore.PublicKey = require('./lib/publickey');
+squarecore.Script = require('./lib/script');
+squarecore.Transaction = require('./lib/transaction');
+squarecore.GovObject = require('./lib/govobject');
+squarecore.URI = require('./lib/uri');
+squarecore.Unit = require('./lib/unit');
 
 // dependencies, subject to change
-bitcore.deps = {};
-bitcore.deps.bnjs = require('bn.js');
-bitcore.deps.bs58 = require('bs58');
-bitcore.deps.Buffer = Buffer;
-bitcore.deps.elliptic = require('elliptic');
-bitcore.deps._ = require('lodash');
+squarecore.deps = {};
+squarecore.deps.bnjs = require('bn.js');
+squarecore.deps.bs58 = require('bs58');
+squarecore.deps.Buffer = Buffer;
+squarecore.deps.elliptic = require('elliptic');
+squarecore.deps._ = require('lodash');
 
 // Internal usage, exposed for testing/advanced tweaking
-bitcore.Transaction.sighash = require('./lib/transaction/sighash');
+squarecore.Transaction.sighash = require('./lib/transaction/sighash');
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer)
 },{"./lib/address":1,"./lib/block":4,"./lib/block/blockheader":3,"./lib/block/merkleblock":5,"./lib/crypto/bn":6,"./lib/crypto/ecdsa":7,"./lib/crypto/hash":8,"./lib/crypto/point":9,"./lib/crypto/random":10,"./lib/crypto/signature":11,"./lib/encoding/base58":12,"./lib/encoding/base58check":13,"./lib/encoding/bufferreader":14,"./lib/encoding/bufferwriter":15,"./lib/encoding/varint":16,"./lib/errors":17,"./lib/govobject":20,"./lib/hdprivatekey.js":22,"./lib/hdpublickey.js":23,"./lib/networks":24,"./lib/opcode":25,"./lib/privatekey":26,"./lib/publickey":27,"./lib/script":28,"./lib/transaction":31,"./lib/transaction/sighash":39,"./lib/unit":43,"./lib/uri":44,"./lib/util/buffer":45,"./lib/util/js":46,"./lib/util/preconditions":47,"./package.json":274,"bn.js":66,"bs58":113,"buffer":116,"elliptic":154,"lodash":190}]},{},[]);
