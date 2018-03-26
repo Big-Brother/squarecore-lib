@@ -6,7 +6,7 @@ To understand the need of using the `Unit` class when dealing with unit conversi
 ```
 > 81.99 * 100000 // wrong
 8198999.999999999
-> var squarecore = require('squarecore');
+> var squarecore = require('@big-brother/squarecore');
 > var Unit = squarecore.Unit;
 > Unit.fromMilis(81.99).toSatoshis() // correct
 8199000

@@ -32,7 +32,7 @@ It's important to note that there are two possible ways to represent a public ke
 Example:
 
 ```javascript
-> var squarecore = require('squarecore');
+> var squarecore = require('@big-brother/squarecore');
 
 // compressed public key starting with 0x03 (greater than midpoint of curve)
 > var compressedPK = squarecore.PublicKey('030589ee559348bd6a7325994f9c8eff12bd'+

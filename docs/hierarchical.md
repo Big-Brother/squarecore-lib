@@ -10,7 +10,7 @@ An instance of a [PrivateKey](privatekey.md) that also contains information requ
 Sample usage:
 
 ```javascript
-var squarecore = require('squarecore');
+var squarecore = require('@big-brother/squarecore');
 var HDPrivateKey = squarecore.HDPrivateKey;
 
 var hdPrivateKey = new HDPrivateKey();

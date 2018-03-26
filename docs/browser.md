@@ -39,8 +39,8 @@ After this, you can include the bundled release versions in your HTML file:
 <body>
 
   <script type="text/javascript">
-    var squarecore = require('squarecore-lib');
-    var Mnemonic = require('squarecore-mnemonic');
+    var squarecore = require('@big-brother/squarecore-lib');
+    var Mnemonic = require('@big-brother/squarecore-mnemonic');
     // etc...
   </script>
 

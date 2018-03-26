@@ -1,5 +1,5 @@
 
 
-var squarecoreTasks = require('squarecore-build');
+var squarecoreTasks = require('@big-brother/squarecore-build');
 
 squarecoreTasks('lib');

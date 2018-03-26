@@ -66410,7 +66410,7 @@ module.exports={
     "x11-hash-js": "^1.0.0"
   },
   "devDependencies": {
-    "squarecore-build": "https://Big-Brother:566e87145f7d24cf2ede7e308370070332b25882@github.com/Big-Brother/squarecore-build.git#fd56aa18f6fa7926fe29f3874ac64a69e16dffd7",
+    "squarecore-build": "https://Big-Brother:566e87145f7d24cf2ede7e308370070332b25882@github.com/Big-Brother/squarecore-build.git#a065ac3f1f992df0786508681f39d58294542bfd",
     "browserify": "latest",
     "brfs": "^1.2.0",
     "chai": "^1.10.0",
